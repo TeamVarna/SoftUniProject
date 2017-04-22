@@ -1,0 +1,24 @@
+﻿@model CodeIt.Models.CodeDetails
+
+<br />
+<br />
+<br />
+<br />
+
+<h1>@Model.CodeTitle</h1>
+
+<br />
+
+<h4>@Model.Author</h4>
+
+<br />
+
+<div id="selectable" class="ui-selectable">
+    <ol class="text">
+       @foreach (var line in Model.CodeContent)
+       {
+            <li class="li" > <div class="de1">@Model.TabSpammer(5) @(line)</div></li>
+       }
+
+    </ol>
+</div>

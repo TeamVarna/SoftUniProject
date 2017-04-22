@@ -1,0 +1,74 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 5000px;
+}
+
+.text {
+    color: #ACACAC;
+}
+
+li.li1, li.li2 {
+    background: #fff;
+    margin: 0 0 0 -6px;
+}
+
+.text .de1, .text .de2 {
+   
+    margin: 1px;
+    padding: 1px;
+    background: none;
+    vertical-align: top;
+    color: #000;
+    border-left: 4px solid #50c62e;
+    margin: 0 0 0 -4px;
+    position: relative;
+    background: #ffffff;
+    
+   
+}
+
+.ui-selectable {
+    -ms-touch-action: auto ;
+    touch-action: none;
+    
+}
+
+
+
+
+.paste_textarea {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-sizing: border-box;
+    display: block;
+    font-family: Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace,serif;
+    font-size: 13px;
+    height: 200px;
+    min-height: 200px;
+    line-height: 21px;
+    width: 100%;
+    margin: 0;
+    padding: 8px 12px;
+}

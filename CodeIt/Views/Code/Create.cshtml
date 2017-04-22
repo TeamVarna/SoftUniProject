@@ -1,0 +1,25 @@
+﻿@model CodeIt.Models.CreateCodeModel
+
+@using (Html.BeginForm("Create", "Code", FormMethod.Post))
+{
+
+    <br>
+
+    <div class="container">
+        <div>
+            @Html.LabelFor(m => m.CodeTitle, new { @class = "control-label col-sm-2" })
+            @Html.TextBoxFor(m => m.CodeTitle, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.CodeContent, new { @class = "control-label col-sm-2" })
+          
+            <textarea class="form-control paste_textarea" cols="100" data-val="true" data-val-required="The CodeContent field is required." id="CodeContent" name="CodeContent"  style="resize: horizontal; height: 400px;"></textarea>
+
+
+        </div>
+    </div>
+
+    <br>
+    <div>
+        <input type="submit" value="Save Code" />
+    </div>
+}
