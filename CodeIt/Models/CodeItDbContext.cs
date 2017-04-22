@@ -14,6 +14,8 @@ namespace CodeIt.Models
 
         public virtual IDbSet<CodeModel> Codes { get; set; }
 
+        public virtual IDbSet<Comment> Comments { get; set; }
+
         public static CodeItDbContext Create()
         {
             return new CodeItDbContext();

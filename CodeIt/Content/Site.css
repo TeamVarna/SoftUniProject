@@ -28,23 +28,25 @@ textarea {
 }
 
 li.li1, li.li2 {
-    background: #fff;
-    margin: 0 0 0 -6px;
+    background: #f5f5f5;
+    margin-left: 23px;
+}
+li.li1:hover {
+    background:rgba(0, 57, 194, 0.10);
 }
 
+
 .text .de1, .text .de2 {
-   
     margin: 1px;
+    margin-bottom: 0px;
     padding: 1px;
-    background: none;
     vertical-align: top;
-    color: #000;
+    color: #ACACAC;
     border-left: 4px solid #50c62e;
-    margin: 0 0 0 -4px;
+    margin: 0 0 0 -1px;
     position: relative;
-    background: #ffffff;
-    
-   
+    background: none;
+    margin-left:4px;
 }
 
 .ui-selectable {
@@ -53,7 +55,21 @@ li.li1, li.li2 {
     
 }
 
+pre {
+    border: 0px;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 26px;
+    background: none;
+    
+}
 
+.space10{
+    margin-bottom:10px;
+}
+.space20{
+    margin-bottom:20px;
+}
 
 
 .paste_textarea {
@@ -72,3 +88,4 @@ li.li1, li.li2 {
     margin: 0;
     padding: 8px 12px;
 }
+

@@ -9,6 +9,28 @@ namespace CodeIt.Controllers
     public class CodeController : Controller
     {
 
+        public ActionResult All(int page = 1)
+        {
+            var pageSize = 10;
+
+            var db = new CodeItDbContext();
+
+            var pastes = db.Codes
+                .OrderByDescending(c => c.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(c => new AllCodesModel
+                {
+                    Id = c.Id,
+                    CodeTitle = c.CodeTitle,
+                    Author = c.Author.Nickname
+                }).ToList();
+
+            ViewBag.CurrentPage = page;
+
+            return View(pastes);
+        }
+
         public ActionResult Details(int id)
         {
             var db = new CodeItDbContext();
@@ -17,7 +39,7 @@ namespace CodeIt.Controllers
             var viewCode = new CodeDetails
             {
 
-                Author = code.Author.UserName,
+                Author = code.Author.Nickname,
                 CodeTitle = code.CodeTitle,
                 CodeContent = lines,
             };
