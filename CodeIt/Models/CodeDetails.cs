@@ -18,18 +18,9 @@ namespace CodeIt.Models
         [Display(Name = "Author")]
         public string Author{ get; set; }
 
+        public int PrevPage { get; set; }
 
         public List<string> Comments { get; set; }
 
-
-        public string TabSpammer(int n)
-        {
-            string res = "";
-            for(int i = 0; i < n; i++)
-            {
-                res += "&nbsp; ";
-            }
-            return res;
-        }
     }
 }

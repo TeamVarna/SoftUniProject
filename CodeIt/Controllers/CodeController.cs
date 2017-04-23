@@ -9,13 +9,21 @@ namespace CodeIt.Controllers
     public class CodeController : Controller
     {
 
-        public ActionResult All(int page = 1)
+        public ActionResult All(int page = 1, string user=null)
         {
             var pageSize = 10;
 
             var db = new CodeItDbContext();
 
-            var pastes = db.Codes
+            var pasteQuery = db.Codes.AsQueryable();
+
+            if(user != null)
+            {
+                pasteQuery = pasteQuery
+                    .Where(c => c.Author.Email == user);
+            }
+
+            var pastes = pasteQuery
                 .OrderByDescending(c => c.Id)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
@@ -23,7 +31,8 @@ namespace CodeIt.Controllers
                 {
                     Id = c.Id,
                     CodeTitle = c.CodeTitle,
-                    Author = c.Author.Nickname
+                    Author = c.Author.Nickname,
+
                 }).ToList();
 
             ViewBag.CurrentPage = page;
@@ -31,7 +40,7 @@ namespace CodeIt.Controllers
             return View(pastes);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, int pPage=1)
         {
             var db = new CodeItDbContext();
             var code = db.Codes.Where(c => c.Id == id).FirstOrDefault();
@@ -41,7 +50,8 @@ namespace CodeIt.Controllers
 
                 Author = code.Author.Nickname,
                 CodeTitle = code.CodeTitle,
-                CodeContent = lines,
+                CodeContent = lines,           
+                PrevPage = pPage
             };
             
 
