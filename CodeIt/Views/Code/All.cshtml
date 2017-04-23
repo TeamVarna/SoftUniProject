@@ -12,23 +12,26 @@
     <h1 class="text-center">No more codes!</h1>
 }
 
-
 @foreach (var code in Model)
 {
-    <div class="row well text-center">
+    <div>
         <div class="space10"></div>
-        
-            <h1>@code.CodeTitle</h1>
-            <h3>@code.Author</h3>
-        
-        
-            
-            <div class="space10"></div>
-            <a href="/Code/Details/@code.Id?pPage=@ViewBag.CurrentPage" class="btn btn-info">See more >></a>
-       
 
+        <h1>@code.CodeTitle</h1>
+        <h3>@code.Author</h3>
+
+
+
+
+        <a href="/Code/Details/@code.Id?pPage=@ViewBag.CurrentPage" class="btn btn-info">See more >></a>
     </div>
+
+            
+
+<hr class="lyne" />
+
 }
+
 
 <div class="space20"></div>
 
