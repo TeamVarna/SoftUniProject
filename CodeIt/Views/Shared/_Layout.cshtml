@@ -14,7 +14,9 @@
     }
     function canvasApp() {
         var canvas = document.getElementById('myCanvas');
-
+        
+        canvas.width = window.innerWidth;
+        
         if (!canvasSupport(myCanvas)) {
             return;
         }
@@ -30,6 +32,7 @@
         }
 
         function drawScreen() {
+
             ctx.fillStyle = 'rgba(0,0,0,.05)';
             ctx.fillRect(0, 0, w, h);
             ctx.fillStyle = '#0f0';
@@ -51,7 +54,7 @@
     }
 </script>
 
-<canvas id="myCanvas" width="1400" height="70"></canvas>
+<canvas  id="myCanvas" height="62"></canvas>
 
 <html>
 
